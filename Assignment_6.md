@@ -52,10 +52,42 @@ The function 'absolute_difference()' calculates the difference between a and b. 
 the function will execute the appropriate return statement and return the corresponding result. when a return statement is executed, the function exits immediately, and any code or statements after the return statement within the same block will not be executed.
 Therefore, if a function has multiple return statements, only the one corresponding to the executed condition will be reached, and the function will terminate at that point.
 #### 4. What are lambda functions in Python? How are they different from regular functions? Provide an example where a lambda function can be useful.
+A lambda function is a small anonymous function. A lambda function can take any number of arguments, but can only have one expression.The power of lambda is better shown when you use them as an anonymous function inside another function. For eg:
+```
+def fun(n):
+    return lambda a : a ** n
 
 
+x = fun( 2)
+print(x(2))
+```
+Lambda functions are defined within an expression and have a limited scope. They are often used as inline functions or passed as arguments to other functions. Regular functions, on the other hand, have their own namespace and can be called from various parts of a program. Lambda functions are typically used for simple, one-line operations. Regular functions, on the other hand, can be more complex and contain multiple lines of code.
+Despite these differences, both lambda functions and regular functions can perform similar tasks. The choice between using a lambda function or a regular function depends on the specific requirements and coding style of the program.
+#### 5. How does the concept of "scope" apply to functions in Python? Explain the difference between local scope and global scope.
+Python Global variables are those which are not defined inside any function and have a global scope whereas Python local variables are those which are defined inside a function and their scope is limited to that function only. local variables are accessible only inside the function in which it was initialized whereas the global variables are accessible throughout the program and inside every function. 
+```
+def f():
 
+    s = "Local variable"
+    print(s)
 
+f()
+print(s)
+```
+NameError: name 's' is not defined pops up when we try to print variable "s" as it is only defined within the function. 
+```
+g = "Global variable"
+print(g)
+```
+Here, "g" is a Python global variable.
+#### 6. How can you use a Python function's "return" statement to return multiple values?
+In Python, you can return multiple values by simply separating them with commas in the return statement.
+```
+def f():
+    s = "Local variable"
+    return 's is a', s
+```
+#### 7. What is the difference between the "pass by value" and "pass by reference" concepts when it comes to function arguments in Python?
 
 
 
