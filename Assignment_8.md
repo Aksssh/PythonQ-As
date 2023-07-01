@@ -132,22 +132,16 @@ fn()
 ```
 #### 9. Create a function that takes a full name as an argument and returns first name and last name.
 ```
-def sep_names():
-    fullname = str(input("Please enter your full name: "))
-    list1 = fullname.split()
-    firstname = list1[0]
-    if len(list1) > 1:
-        secondname = list1[1]
-    if len(list1) > 2:
-        thirdname = list1[2]
-    print(f'first name : {firstname}')
-    if len(list1) == 2:
-        print(f'last name : {secondname}')
-    elif len(list1) == 3:
-        print(f'last name : {thirdname}')
-    elif len(list1) == 1:
-        print(f'last name not mentioned')
-        
+def sep_names(fullname):
+    if type(fullname) == str:
+        fname = fullname.split()[0] if bool(fullname.split()[0]) else "First Name Not Mentioned"
+        lname = fullname.split()[-1] if len(fullname.split())>1 else "Last Name Not Mentioned"
+        Output = f'''First Name : {fname}
+Last Name : {lname}'''
+        return Output
+    else:
+        return "Not a String"
 
-sep_names()        
+fullname = input("Please enter your full name: ")
+print(sep_names(fullname))   
 ```
