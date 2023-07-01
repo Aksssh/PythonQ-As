@@ -46,7 +46,85 @@ Output:
 Hello, Alice! long time, no see.
 ```
 #### 6. What is the operation of this special character ‘\’?
-
+In Python, the backslash '' serves as an escape character and has several uses.
+1. Some commonly used escape sequences include:
+- '\n' represents a newline character.
+- '\t' represents a tab character.
+- '\r' represents a carriage return character.
+- '\' represents a literal backslash character.
+2. Multi-Line Strings: The backslash can be used to indicate that a string literal spans multiple lines. When you end a line with a backslash, it signifies that the string continues on the next line without including a newline character. This is useful when you want to write long strings without line breaks.
+3. Raw Strings: The backslash can be used to create raw strings by prefixing a string literal with 'r'. In a raw string, escape sequences are treated as literal characters and are not interpreted. This is particularly useful when working with regular expressions or file paths, as it allows you to avoid escaping backslashes.
+```
+raw_string = r"C:\path\to\file.txt"
+```
+#### 7. Give an example of the following conditions:
+#### (i) Homogeneous list
+#### (ii) Heterogeneous set
+#### (iii) Homogeneous tuple
+```
+(i) int_list = [1,2,3,4]
+(ii) het_list = [1,2,3,"hi",9.2,[2,4]]
+(iii) hom_tup = ("Apple","Mango","Avocado")
+```
+#### 8. Explain the mutable and immutable data types with proper explanations & examples.
+There are 3 mutable data types in Python:
+1. List: A list data structure is an ordered sequence of elements in Python, that is mutable, or changeable.
+```
+my_list = [1,2,3,4,5]
+my_list.append(10)
+print(my_list)
+```
+Output:
+```
+[1,2,3,4,5,10]
+```
+2. Dictionary: It is an unordered collection of items. Each item of a dictionary has a key/value pair, using which we can access a particular key or value of a dictionary. Keys in dictionaries are unique in nature. We can modify, remove or add values of existing items in a dictionary using the assignment operator.
+```
+my_dict = {"state":"WB", "Capital":"Kolkata"}
+my_dict['Country'] = "India"
+print("Dictionary after adding a new key-value pair = ",my_dict)
+```
+Output:
+```
+Dictionary after adding a new key-value pair =  {'state': 'WB', 'Capital': 'Kolkata', 'Country': 'India'}
+```
+3. Set: This is an unordered collection of items in Python. All the elements of the set are unique in nature, that is, there are no duplicates in a set. Also, the elements of the set are immutable in nature, that is, they cannot be changed. However, a set itself is mutable in Python. That means we can add or remove elements from a set in Python. Hence, we can perform operations in a set that can modify the overall set.
+```
+my_set = {1,2,6,5,7,11}
+my_set.add(16)
+print("Set after adding a value: ",my_set)
+```
+Output:
+```
+Set after adding a value:  {16, 1, 2, 5, 6, 7, 11}
+```
+Immutable data types: These are objects that cannot be modified or altered after they have been created. These objects become permanent once created and initialized, and they form a critical part of data structures used in Python. Python is used in numbers, tuples, strings, frozen sets, and user-defined classes with some exceptions. They cannot change, and their values and it remains permanent once they are initialized hence called immutable. Eg: Int, Float, Tuple, etc.
+#### 9. Write a code to create the given structure using only for a loop.
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
+```
+n = 5
+for i in range(1,n+1):
+    string = ''
+    for j in range(n-i):
+        string = string + ' '
+    for j in range(2*i-1):
+        string = string + '*'
+    print(string)
+```
+#### 10. Write a code to create the given structure using while loop    
+```
+n = 5
+i = n
+while i>0:
+    print(' '*(n-i) + "|"*(2*(i) - 1))
+    i-=1
+```
 
 
 
