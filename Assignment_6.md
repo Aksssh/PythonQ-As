@@ -117,7 +117,14 @@ for i in range(1,n+1):
         string = string + '*'
     print(string)
 ```
-#### 10. Write a code to create the given structure using while loop    
+#### 10. Write a code to create the given structure using while loop   
+```
+|||||||||
+ |||||||
+  |||||
+   |||
+    |
+```
 ```
 n = 5
 i = n
