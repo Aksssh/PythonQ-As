@@ -88,10 +88,66 @@ def f():
     return 's is a', s
 ```
 #### 7. What is the difference between the "pass by value" and "pass by reference" concepts when it comes to function arguments in Python?
+In the pass-by-value model, when you call a function with a set of arguments, the data is copied into the function. This means that you can modify the arguments however you please and that you won't be able to alter the state of the program outside the function.This looks like the pass-by-value model because we gave it a 3, changed it to a 4, and the change wasn't reflected on the outside (a is still 3).
+```
+def foo(x):
+    x = 4
 
+a = 3
+foo(a)
+print(a)
+```
+In a true pass-by-reference model, the called function gets access to the variables of the callee! Sometimes, it can look like that's what Python does, but Python does not use the pass-by-reference model.
+def main():
+        arg = 4
+        square(arg)
+        print(arg)
+   
+    def square(n):
+        n *= n
 
+    main()
+4
+In this case, the arg variable is not altered in place. It seems that Python treats your supplied argument as a standalone value rather than a reference to an existing variable.
+Python passes arguments neither by reference nor by value, but by assignment. 
+#### 8. Create a function that can intake integer or decimal value and do following operations:
+#### a. Logarithmic function (log x)
+#### b. Exponential function (exp(x))
+#### c. Power function with base 2 (2x)
+#### d. Square root
+```
+import math
+def fn():
+    num = float(input("Enter number: "))
+    log = math.log(num)
+    exp = math.exp(num)
+    po = math.pow(2,num)
+    sq = math.sqrt(num)
+    print(f'The log of {num} is {log}')
+    print(f'The exponent of {num} is {exp}')
+    print(f'The power of {num} with base 2 is {po}')
+    print(f'The square root of {num} is {sq}')
 
+fn()
+```
+#### 9. Create a function that takes a full name as an argument and returns first name and last name.
+```
+def sep_names():
+    fullname = str(input("Please enter your full name: "))
+    list1 = fullname.split()
+    firstname = list1[0]
+    if len(list1) > 1:
+        secondname = list1[1]
+    if len(list1) > 2:
+        thirdname = list1[2]
+    print(f'first name : {firstname}')
+    if len(list1) == 2:
+        print(f'last name : {secondname}')
+    elif len(list1) == 3:
+        print(f'last name : {thirdname}')
+    elif len(list1) == 1:
+        print(f'last name not mentioned')
+        
 
-
-
-
+sep_names()        
+```
