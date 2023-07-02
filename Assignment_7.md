@@ -55,14 +55,42 @@ The conditions that can occur are:
 - Not Operator: is associated with a single condition. It inverts the results, i.e., true is changed to false, and false is changed to true. It is represented as "not X". The conditions that occur are:
   - If the condition is True, the result is False.
   - If the condition is False, the result is True.
-
-
-
-
-
-
-
-
-
-
-
+#### 4. Explain the right shift operator and left shift operator with examples.
+Shift Operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively. They can be used when we have to multiply or divide a number by two. 
+- Bitwise Left Shift (<<): Shifts the bits of the number to the left and fills 0 on voids right as a result. 
+```
+a = 5 = 0000 0101 (Binary)
+a << 1 = 0000 1010 = 10
+```
+- Bitwise right shift (>>): Shifts the bits of the number to the right and fills 0 on voids left( fills 1 in the case of a negative number) as a result.
+```
+a = 10 = 0000 1010 (Binary)
+a >> 1 = 0000 0101 = 5
+```
+#### 5. Create a list containing int type data of length 15. Then write a code to check if 10 is present in the list or not.
+```
+my_list = []
+while len(my_list) <15:
+    x = input(f"Enter Number/Numbers (Use Comma seperated values to input multiple digits, takes 1st 15 digits): ")
+    y = x
+    y.lstrip('-')
+    if y.isdigit():
+        my_list.append(x)
+    elif "," in x:
+        num_array = x.split(",")
+        i = 0
+        while ((len(my_list) < 15) and (i<len(num_array))):
+            y = num_array[i].lstrip('-')
+            if y.isdigit():
+                my_list.append(int(num_array[i]))
+            else:
+                print(f'{num_array[i]} is not a number')
+            i=i+1
+    elif not(y.isdigit()):
+        print(f'{x} is not a number')
+    print(my_list)
+if 10 in my_list:
+    print("10 is present in the list")
+else:
+    print("10 not present in the list")
+```
