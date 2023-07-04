@@ -98,9 +98,68 @@ print(list(sort_string))
 ```
 #### 10. Create a lambda function that takes two lists as input and returns a new list containing the common elements between the two lists.
 ```
+def check_digit():
+    while True:
+        try:
+            length = int(input("Enter the number of elements in the list: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            
+    listx = []
+    for i in range(length):
+        listx.append(input("Enter element of choice: "))
+    return listx
+    
 
+print("List one:")
+list1 = check_digit()
+print(list1)
+print("List two:")
+list2 = check_digit()
+print(list2)
 
+result = list(filter(lambda x: x in list1, list2))
+print ("Common elements in both lists : ",result)
+```
+#### 11. Write a recursive function to calculate the factorial of a given positive integer.
+```
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n*fact(n-1)
 
+n = 'a'
+while not(str(n).isdigit()):
+    try:
+        n = int(input("Enter number of elements in list2: "))
+        if not(str(n).isdigit()):
+            print("Enter a positive integer")            
+    except Exception as e:
+        print(f"{e}. Kindly enter a positive integer")
+print(fact(n))
+```
+#### 12. Implement a recursive function to compute the nth Fibonacci number.
+```
+def F(n):
+    if n<= 0:
+        print("Incorrect input")
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        return F(n-1)+F(n-2)
+
+print(F(10))
+```
+Output:
+```
+34
+```
+#### 13. Create a recursive function to find the sum of all the elements in a given list.
+```
 
 
 
