@@ -160,6 +160,51 @@ Output:
 ```
 #### 13. Create a recursive function to find the sum of all the elements in a given list.
 ```
+def sum_el(list1, size):
+    if size == 0:
+        return 0
+    else:
+        return list1[size - 1] + sum_el(list1, size-1)
+
+n = int(input("Enter number of elements: "))
+l = []
+for i in range(0,n):
+    element = int(input("Enter element (integers only)"))
+    l.append(element)
+
+print('Final list:')
+print(l)
+
+b = sum_el(l,n)
+
+print("Sum of items in list:")
+
+print(b)
+```
+#### 14. Write a recursive function to determine whether a given string is a palindrome.
+```
+def pal(string):
+    string = string.lower()
+    l = len(string)
+    if l < 2:
+        return True
+    elif string[0] == string[-1]:
+        return pal(string[1: l-1])
+    else:
+        return False
+
+x = str(input("Enter string:"))
+
+if (pal(x)==False):
+    print("String is not a palindrome!")
+else:
+    print("String is a palindrome!")
+```
+#### 15. Implement a recursive function to find the greatest common divisor (GCD) of two positive integers.
+
+
+
+
 
 
 
