@@ -201,13 +201,21 @@ else:
     print("String is a palindrome!")
 ```
 #### 15. Implement a recursive function to find the greatest common divisor (GCD) of two positive integers.
-
-
-
-
-
-
-
+```
+def GCD(n1, n2):
+        n1 = abs(n1)
+        n2 = abs(n2)
+        if n1 == 0 or n2 == 0:
+            return n1+n2
+        else:
+            return GCD(abs(n1-n2),min(n1,n2))
+        
+GCD(-36,60)
+```
+Output:
+```
+12
+```
 
 
 
