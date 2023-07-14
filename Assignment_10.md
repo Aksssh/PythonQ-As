@@ -26,6 +26,22 @@ except ZeroDivisionError:
 - The except keyword is followed by the specific exception type you want to catch. You can replace ExceptionType with the specific exception you want to handle, such as ValueError, TypeError, or FileNotFoundError. Alternatively, you can omit the exception type to catch all exceptions, but it is generally recommended to catch specific exceptions whenever possible.
 - After the exception type, you write a colon (:). Inside the except block, you write the code to handle the exception. This code will be executed if the corresponding exception occurs in the try block.
 #### 3. What happens if an exception occurs inside a try block and there is no matching except block?
+If there is no matching except block to handle that specific exception, the exception will propagate up the call stack until it is caught by an appropriate except block or until it reaches the top-level of the program. This is known as an unhandled exception. If the exception is not caught and handled anywhere in the program, it will typically result in the termination of the program's execution.
+The program will print an error message, commonly referred to as a stack trace or traceback, which provides information about the unhandled exception and the sequence of function calls that led to it.
+#### 4. What is the difference between using a bare except block and specifying a specific exception type?
+When you use a bare except block, without specifying any exception type, it catches all exceptions that occur within the try block, regardless of the specific exception type. This can be problematic because it makes it harder to understand and debug the code. It can also inadvertently catch and handle exceptions that you didn't anticipate or intend to handle. Using a bare except block is generally discouraged, as it can lead to silent failures and make it difficult to diagnose and fix issues.
+Alternatively, specifying the type of exception you want to catch using the except statement allows you to handle a particular exception type while letting other exceptions propagate up the call stack.
+#### 5. Can you have nested try-except blocks in Python? If yes, then give an example.
+
+
+
+
+
+
+
+
+
+
 
 
 
