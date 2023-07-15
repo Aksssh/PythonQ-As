@@ -32,15 +32,73 @@ The program will print an error message, commonly referred to as a stack trace o
 When you use a bare except block, without specifying any exception type, it catches all exceptions that occur within the try block, regardless of the specific exception type. This can be problematic because it makes it harder to understand and debug the code. It can also inadvertently catch and handle exceptions that you didn't anticipate or intend to handle. Using a bare except block is generally discouraged, as it can lead to silent failures and make it difficult to diagnose and fix issues.
 Alternatively, specifying the type of exception you want to catch using the except statement allows you to handle a particular exception type while letting other exceptions propagate up the call stack.
 #### 5. Can you have nested try-except blocks in Python? If yes, then give an example.
-
-
-
-
-
-
-
-
-
+We can have nested try-except blocks in Python. In this case, if an exception is raised in the nested try block, the nested except block is used to handle it. In case the nested except is not able to handle it, the outer except blocks are used to handle the exception.
+```
+try:
+   print("outer try block")
+   try:
+       print("Inner try block")
+       print(10/0)
+   except NameError:
+       print("Inner except block")
+   finally:
+       print("Inner finally block")
+except:
+   print("outer except block")
+finally:
+   print("outer finally block")
+```
+Output:
+```
+outer try block
+Inner try block
+Inner finally block
+outer except block
+outer finally block
+```
+This code executes the outer try block, followed by the inner try block. There's no exception in this case so goes to the inner finally block followed by the exception
+handled by the outer except block and then executes the outer finally block.
+#### 6. Can we use multiple exception blocks, if yes then give an example.
+One can handle different exceptions all using a single block of code, they can be grouped together in a tuple as shown in the code given below:
+```
+try:
+    f = open(filename)
+except (FileNotFoundError, PermissionError):
+    ...
+```
+#### 7. Write the reason due to which the following errors are raised:
+- EOFError - "End of File Error", it is a type of exception that occurs when an input operation tries to read beyond the end of a file or stream. It is raised when there is no more data to be read from a file or an input source.
+```
+try:
+    user_input = input("Enter a value: ")
+except EOFError:
+    print("End of input reached.")
+```
+- FloatingPointError - Floating-point operations include mathematical calculations involving floating-point numbers, such as division, multiplication, addition, and subtraction. The FloatingPointError exception is specifically raised when an error occurs during these operations, typically due to special floating-point values like infinity, NaN (Not a Number), or when the result of a calculation is too large or too small to be represented accurately. This exception is derived from the built-in ArithmeticError class.
+```
+try:
+    result = 1.0 / 0.0 
+except FloatingPointError:
+    print("A FloatingPointError occurred. Please check your calculations.")
+```
+- IndexError - This type of exception in Python that is raised when you try to access an index of a sequence (such as a list, tuple, or string) that is out of range. It occurs when you attempt to access an element at an invalid index or when an operation expects a certain index that does not exist in the sequence.
+```
+my_list = [1, 2, 3]
+try:
+    value = my_list[5] 
+except IndexError:
+    print("An IndexError occurred. The index is out of range.")
+```
+- MemoryError -  This type of exception in Python that is raised when an operation fails due to insufficient memory. It occurs when a program tries to allocate more memory than is available. 
+```
+try:
+    data = [0] * (10 ** 9) 
+except MemoryError:
+    print("A MemoryError occurred. Insufficient memory.")
+```
+- OverflowError - 
+f. TabError
+g. ValueError
 
 
 
