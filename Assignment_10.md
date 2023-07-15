@@ -96,14 +96,32 @@ try:
 except MemoryError:
     print("A MemoryError occurred. Insufficient memory.")
 ```
-- OverflowError - 
-f. TabError
-g. ValueError
+- OverflowError - This type of exception in Python that is raised when a calculation exceeds the maximum limit of a numeric type. It occurs when an arithmetic operation results in a value that is too large to be represented by the numeric type being used.
+```
+try:
+    result = 10 ** 1000 
+except OverflowError:
+    print("An OverflowError occurred. The calculation result is too large.")
+```
+- TabError - This type of exception in Python that is raised when there is an issue with the indentation of code using tabs and spaces inconsistently. It occurs when the Python interpreter encounters an indentation error due to mixing tabs and spaces or inconsistent use of indentation.
+```
+try:
+    if condition:
+    \tprint("Indented line")  # Indentation using a tab character
+except TabError:
+    print("A TabError occurred. Check the indentation in your code.")
+```
+- ValueError - This type of exception in Python that is raised when an operation or function receives an argument of the correct data type but an inappropriate value. It occurs when the input value is of the correct type, but the value itself does not conform to the requirements of the operation.
+```
+import math
 
-
-
-
-
+try:
+    math.sqrt(-100)
+except ValueError:
+    print('Positive number expected for square root operation')
+```
+#### 8. Write code for the following given scenario and add try-exception block to it.
+#### a. Program to divide two numbers
 
 
 
