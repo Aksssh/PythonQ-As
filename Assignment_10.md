@@ -120,10 +120,61 @@ try:
 except ValueError:
     print('Positive number expected for square root operation')
 ```
-#### 8. Write code for the following given scenario and add try-exception block to it.
-#### a. Program to divide two numbers
+#### 8. Write code for the following given scenario and add a try-exception block to it.
+#### a. Program to divide two numbers.
+```
+try:
+    int1 = int(input("Enter dividend: "))
+    int2 = int(input("Enter divisor: "))
+    res = int1/int2
+    print(f'Quotient: {res}')
+          
+except ZeroDivisionError:
+    print("Cannot divide by zero")
 
-
-
+except ValueError:
+    print("Enter a valid number")
+```
+#### b. Program to convert a string to an integer.
+```
+string = input("Enter a number: ")
+try:
+    integer = int(string)
+    print(integer) 
+    print(type(integer))
+        
+except ValueError:
+    print("Enter a valid number")
+```
+#### c. Program to access an element in a list.
+```
+def access_e(my_list, index):
+    try:
+        element = my_list[index]
+        return element
+    except IndexError:
+        print("Error: Index is out of range.")
+        return None
+```
+#### d. Program to handle a specific exception
+```
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+        return None
+```
+#### e. Program to handle any exception
+```
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        return None
+```
 
 
